@@ -38,5 +38,5 @@ class UserInputForm(FlaskForm):
                                validators=[DataRequired()])
     
     # Submit Field
-    SubmitField = SubmitField("Submit") 
+    submit = SubmitField("Submit") 
      

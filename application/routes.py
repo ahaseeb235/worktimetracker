@@ -6,7 +6,8 @@ from application.form import UserInputForm
 def index():
     return render_template('index.html')
 
-@app.route("/addtime")
+@app.route("/add")
 def add_worktime():
     form = UserInputForm()
-    return render_template("addtime.html", title = 'addtime', form = form)
+    return render_template("add.html", title = 'add', form = form)
+
