@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <h2>Page for Time Added</h2>
+    <div class="card card-style mb-2">
+        <div class="card-body">
+            <form action="" method="POST">
+                {{ form.csrf_token() }}
+                <fieldset class="form-group">
+                    <legend class="mb-4">Work Time Tracker</legend>
+
+                    <!-- For name -->
+                    <div class="form-group">
+                        {{ form.name.label(class="form-control-label") }}
+                        <!-- look for error  -->
+                        {% if form.name.errors %}
+                        {{ form.name(class="form-control form-control-sm is-invalid") }}
+                        {% for error in form.amount.errors %}
+                        <div class="invalid-feedback">
+                            <span>{{error}}</span>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        {{ form.name(class="form-control form-control-sm") }}
+                        {% endif %}
+                    </div>
+                    <!-- Time in  -->
+                    <div class="form-group">
+                        {{ form.time_in.label(class="form-label") }}
+                        {{ form.time_in(class="form-control") }}
+                    </div>
+                    <!-- Time out -->
+                    <div class="form-group">
+                        {{ form.time_out.label(class="form-label") }}
+                        {{ form.time_out(class="form-control") }}
+                    </div>
+                    <!-- Month -->
+                    <div class="form-group">
+                        {{ form.month.label(class="form-label") }}
+                        {{ form.month(class="form-control") }}
+                    </div>
+                    <!-- date -->
+                    <div class="form-group">
+                        {{ form.date.label(class="form-label") }}
+                        {{ form.date(class="form-control") }}
+                    </div>
+                    <!-- total hours per day  -->
+                    <div class="form-group">
+                        {{ form.total_hours_day.label(class="form-label") }}
+                        {{ form.total_hours_day(class="form-control") }}
+                    </div>
+                    <!-- total hours per month -->
+                    <div class="form-group">
+                        {{ form.total_hours_month.label(class="form-label") }}
+                        {{ form.total_hours_month(class="form-control") }}
+                    </div>
+                    <!-- Work day type picklist -->
+                    <div class="form-group">
+                        {{ form.workday_type.label(class="form-label") }}
+                        {{ form.workday_type(class="form-control") }}
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group border-bottom pb-3">
+                        {{ form.submit(class="btn btn-primary")}}
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
