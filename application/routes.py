@@ -1,11 +1,10 @@
 from application import app
+from flask import render_template
 
 @app.route("/")
 def index():
-    return"""
+    return render_template('index.html')
 
-    <h2>Hello world</h2>
-    <p>this is a test</p>
-
-    """
-
+@app.route("/layout")
+def layout():
+    return render_template('layout.html')
