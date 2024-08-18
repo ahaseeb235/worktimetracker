@@ -18,7 +18,7 @@ class UserInputForm(FlaskForm):
     # Select date
     date = DateField('Select Date', format='%Y-%m-%d', validators=[DataRequired()])
 
-      # Total hours worked for that day (read-only)
+    # Total hours worked for that day (read-only)
     total_hours_day = DecimalField('Total Hours Worked (Day)', 
                                    validators=[Optional(), NumberRange(min=0.0, max=24.0)], 
                                    places=2, 

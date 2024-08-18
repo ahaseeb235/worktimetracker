@@ -1,4 +1,41 @@
 {% extends 'layout.html' %}
+
 {% block content %}
-<h1>this is index</h1>
+
+<div class="col-sm-10 ml-auto mr-auto ">
+    <H2>Work Hours History</H2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Time-In</th>
+                <th scope="col">Time-Out</th>
+                <th scope="col">Date</th>
+                <th scope="col">Month</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{ entry.date.strftime("%m-%d-%Y") }}</td>
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.time-in }}</td>
+                <td>{{ entry.time-out }}</td>
+                <td>{{ entry.date}}</td>
+                <td>{{ entry.month }}</td>
+                <td>{{ entry.workday_type }}</td>
+                <td><a href="{{ url_for('delete', entry_id = entry.id) }}"
+                        class="btn btn-outline-danger btn-sm">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
 {% endblock %}
+
+<!-- {{ url_for('delete', entry_id = entry.id) }} -->
