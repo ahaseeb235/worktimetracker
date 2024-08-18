@@ -18,15 +18,17 @@ class UserInputForm(FlaskForm):
     # Select date
     date = DateField('Select Date', format='%Y-%m-%d', validators=[DataRequired()])
 
-    # Total hours worked for that day
+      # Total hours worked for that day (read-only)
     total_hours_day = DecimalField('Total Hours Worked (Day)', 
-                                   validators=[DataRequired(), NumberRange(min=0.0, max=24.0)], 
-                                   places=2)
+                                   validators=[Optional(), NumberRange(min=0.0, max=24.0)], 
+                                   places=2, 
+                                   render_kw={'readonly': True})
 
-    # Total hours for the month
+    # Total hours for the month (read-only)
     total_hours_month = DecimalField('Total Hours Worked (Month)', 
                                      validators=[Optional(), NumberRange(min=0.0)], 
-                                     places=2)
+                                     places=2, 
+                                     render_kw={'readonly': True})
 
     # Pick list for workday type
     workday_type = SelectField('Workday Type', 

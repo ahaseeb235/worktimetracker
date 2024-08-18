@@ -1,7 +1,8 @@
-{{% extends 'layout.html' %}}
+{% extends 'layout.html' %}
 {% block content %}
 <div class="col-xs-10 col-sm-6 col-md-6">
-    <h2>Page for Time Added</h2>
+    <h2>Page for Adding Hours Worked</h2>
+    <br>
     <div class="card card-style mb-2">
         <div class="card-body">
             <form action="" method="POST">
@@ -11,7 +12,11 @@
 
                     <!-- For name -->
                     <div class="form-group">
-                        {{ form.name.label(class="form-control-label") }}
+                        <div class="form-group">
+                            {{ form.name.label(class="form-label") }}
+                            {{ form.name(class="form-control") }}
+                        </div>
+                        <!-- {{ form.name.label(class="form-control-label") }} -->
                         <!-- look for error  -->
                         <!-- {% if form.name.errors %}
                         {{ form.name(class="form-control form-control-sm is-invalid") }}
@@ -45,15 +50,15 @@
                         {{ form.date(class="form-control") }}
                     </div>
                     <!-- total hours per day  -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         {{ form.total_hours_day.label(class="form-label") }}
                         {{ form.total_hours_day(class="form-control") }}
-                    </div>
+                    </div> -->
                     <!-- total hours per month -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         {{ form.total_hours_month.label(class="form-label") }}
                         {{ form.total_hours_month(class="form-control") }}
-                    </div>
+                    </div> -->
                     <!-- Work day type picklist -->
                     <div class="form-group">
                         {{ form.workday_type.label(class="form-label") }}

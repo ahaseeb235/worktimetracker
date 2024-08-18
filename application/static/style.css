@@ -5,7 +5,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* body {
+body {
     padding: 2rem;
     background-color: #333;
     color: whitesmoke;
@@ -15,4 +15,15 @@
     align-items: center;
     gap: 2rem;
     font-size: 1.2rem;
+}
+
+/* .navbar {
+    width: 80%;
+    margin: 0;
+    background-color: #333;
+    color: #fafafa;
+}
+
+a {
+    text-decoration: none;
 } */
