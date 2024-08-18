@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{{% extends 'layout.html' %}}
 {% block content %}
 <div class="col-xs-10 col-sm-6 col-md-6">
     <h2>Page for Time Added</h2>
@@ -13,7 +13,7 @@
                     <div class="form-group">
                         {{ form.name.label(class="form-control-label") }}
                         <!-- look for error  -->
-                        {% if form.name.errors %}
+                        <!-- {% if form.name.errors %}
                         {{ form.name(class="form-control form-control-sm is-invalid") }}
                         {% for error in form.amount.errors %}
                         <div class="invalid-feedback">
@@ -22,7 +22,7 @@
                         {% endfor %}
                         {% else %}
                         {{ form.name(class="form-control form-control-sm") }}
-                        {% endif %}
+                        {% endif %} -->
                     </div>
                     <!-- Time in  -->
                     <div class="form-group">
